@@ -4,7 +4,7 @@ A sleek and intuitive mobile application built with Flutter, designed to offer a
 ✨ Features
 Dynamic Product Listing: Explore a diverse collection of shoes with detailed information for each.
 
-Intuitive Filtering: Easily narrow down your choices by brand using dedicated filter chips.
+Intuitive Filtering: Easily narrow down your choices by brand and sizes using dedicated filter chips.
 
 Intelligent Search (Keyword & Phrase Match): Our custom search algorithm provides highly relevant results by prioritizing exact phrase matches and dynamically scoring partial word matches.
 
