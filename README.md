@@ -1,7 +1,8 @@
-👟 Shoe Store - My first flutter project
+# 👟 Shoe Store
+##  My first flutter project
 A sleek and intuitive mobile application built with Flutter, designed to offer a seamless shoe shopping experience! Browse a wide range of footwear, filter by brand, and find exactly what you're looking for with our smart search functionality.
 
-✨ Features
+### Features
 Dynamic Product Listing: Explore a diverse collection of shoes with detailed information for each.
 
 Intuitive Filtering: Easily narrow down your choices by brand and sizes using dedicated filter chips.
@@ -12,14 +13,14 @@ Responsive UI: Enjoy a consistent and visually appealing experience on various s
 
 Product Details View: Tap on any shoe to see more details, including available sizes and pricing.
 
-🚀 Getting Started
+## 🚀 Getting Started
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
+### Prerequisites
 Make sure you have the Flutter SDK installed on your machine. If not, follow the official Flutter installation guide:
 Flutter Installation Guide
 
-Installation
+### Installation
 Clone the Repository:
 
 git clone https://github.com/your-username/flutter_shoe_store.git
@@ -27,7 +28,7 @@ cd flutter_shoe_store
 
 (Remember to replace your-username with your actual GitHub username!)
 
-Get Dependencies:
+### Get Dependencies:
 
 flutter pub get
 
@@ -37,12 +38,13 @@ flutter run
 
 This will launch the app on your connected device or emulator.
 
-🔍 Search Algorithm Highlights
+## 🔍 Search Algorithm Highlights
 Our search functionality is designed for a highly intuitive user experience:
 
-Normalization: All search queries and product titles are normalized (converted to lowercase, punctuation removed, extra spaces trimmed) to ensure consistent matching.
+### Normalization:
+All search queries and product titles are normalized (converted to lowercase, punctuation removed, extra spaces trimmed) to ensure consistent matching.
 
-Tiered Scoring:
+### Tiered Scoring:
 
 100% Match: If the user's search query (after normalization) is an exact phrase match within a product title.
 
