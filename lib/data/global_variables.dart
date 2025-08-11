@@ -12,7 +12,7 @@ final List<Map<String, dynamic>> products = [
     'company': "Adidas",
     'title': "Men's Adidas Samba",
     'price': 75.00,
-    'sizes': [8, 9, 11, 12],
+    'sizes': [3, 8, 9, 11, 12],
     'imageUrl': "assets/images/adidas_samba.png",
   },
   {
@@ -54,3 +54,11 @@ final List<String> companyFilters = [
   ...products.map((product) => product["company"] as String).toSet(),
 ];
 
+List<int> sizeFilters() {
+  List<int> sizeFilters = [
+    -1,
+    ...products.expand((product) => product["sizes"] as List<int>).toSet(),
+  ];
+  sizeFilters.sort((a, b) => a.compareTo(b));
+  return sizeFilters;
+}

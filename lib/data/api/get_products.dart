@@ -4,14 +4,15 @@ import 'package:shoe_shop_app/helpers/search_helpers.dart';
 
 List<Map<String, dynamic>> getproducts(
   String searchString,
-  String selectedFilter,
+  String selectedCompanyFilter,
+  List<int> selectedSizeFilters,
 ) {
   List<Map<String, dynamic>> productList = products;
 
   String normalisedSearchString = normaliseString(searchString);
 
-  if (selectedFilter != "All") {
-    productList = filterProducts(selectedFilter, productList);
+  if (selectedCompanyFilter != "All" || selectedSizeFilters.isNotEmpty) {
+    productList = filterProducts(selectedCompanyFilter, selectedSizeFilters, productList);
   }
 
   if (normalisedSearchString.isNotEmpty) {
