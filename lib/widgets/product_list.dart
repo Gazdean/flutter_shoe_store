@@ -58,8 +58,6 @@ class _ProductListState extends State<ProductList> {
       fetchProducts(searchString: newSearchString);
     }
 
-    print(sizeFilters);
-
     return SafeArea(
       child: Column(
         children: [
@@ -96,92 +94,46 @@ class _ProductListState extends State<ProductList> {
                 ],
               ),
             ),
-          Column(
-            children: [
-              SizedBox(
-                height: 80,
-                child: ListView.builder(
-                  itemCount: companyFilters.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    final filter = companyFilters[index];
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedFilter = filter;
-                            fetchProducts(
-                              selectedFilter: selectedFilter,
-                              searchString: searchString,
-                            );
-                          });
-                        },
-                        child: Chip(
-                          backgroundColor: selectedFilter == filter
-                              ? Theme.of(context).colorScheme.primary
-                              : Color.fromRGBO(245, 247, 249, 1),
-                          side: const BorderSide(
-                            color: Color.fromRGBO(245, 247, 249, 1),
-                          ),
-                          label: Text(filter),
-                          labelStyle: const TextStyle(fontSize: 16),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 20,
-                            vertical: 15,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
+          SizedBox(
+            height: 80,
+            child: ListView.builder(
+              itemCount: companyFilters.length,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                final filter = companyFilters[index];
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedFilter = filter;
+                        fetchProducts(
+                          selectedFilter: selectedFilter,
+                          searchString: searchString,
+                        );
+                      });
+                    },
+                    child: Chip(
+                      backgroundColor: selectedFilter == filter
+                          ? Theme.of(context).colorScheme.primary
+                          : Color.fromRGBO(245, 247, 249, 1),
+                      side: const BorderSide(
+                        color: Color.fromRGBO(245, 247, 249, 1),
                       ),
-                    );
-                  },
-                ),
-              ),
-
-              SizedBox(
-                height: 70,
-                child: ListView.builder(
-                  itemCount: sizeFilters.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    final filter = sizeFilters[index];
-                    return Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            selectedFilter = filter as String;
-                            fetchProducts(
-                              selectedFilter: selectedFilter,
-                              searchString: searchString,
-                            );
-                          });
-                        },
-                        child: Chip(
-                          backgroundColor: selectedFilter == filter
-                              ? Theme.of(context).colorScheme.primary
-                              : Color.fromRGBO(245, 247, 249, 1),
-                          side: const BorderSide(
-                            color: Color.fromRGBO(245, 247, 249, 1),
-                          ),
-                          label: Text(filter as String),
-                          labelStyle: const TextStyle(fontSize: 13),
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 10,
-                            vertical: 10,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                        ),
+                      label: Text(filter),
+                      labelStyle: const TextStyle(fontSize: 16),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 15,
                       ),
-                    );
-                  },
-                ),
-              ),
-            ],
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
           ),
 
           productList.isEmpty

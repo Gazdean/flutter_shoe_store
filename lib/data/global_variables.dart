@@ -49,5 +49,8 @@ final List<Map<String, dynamic>> products = [
   },
 ];
 
-final List<String> companyFilters = ['All', ...products.map((product)=> product["company"] as String).toSet()];
-final List<int> sizeFilters = [-1, ...products.expand((product)=> product["sizes"] as List<int>).toSet()];
+final List<String> companyFilters = [
+  'All',
+  ...products.map((product) => product["company"] as String).toSet(),
+];
+
